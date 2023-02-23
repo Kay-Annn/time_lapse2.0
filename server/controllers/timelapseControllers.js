@@ -72,8 +72,8 @@ export const createTimelapse = async (req, res) => {
 
     //Writes the gif in this folder
     const gifName = project.name.replace(/\s+/g, '');
-    await fs.writeFile(join(__dirname, `../${gifFolder}/${gifName}.gif`), Render)
-
+    await fss.writeFile(join(__dirname, `../${gifFolder}/${gifName}.gif`), Render)
+  
     const timelapseFile = new Timelapse({
       name: project.name,
       createdBy: req.userId,
