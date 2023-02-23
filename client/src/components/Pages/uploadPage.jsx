@@ -48,7 +48,7 @@ function UploadImage() {
       const token = localStorage.getItem('@token')
 
       axios.post(
-        `http://localhost:3001/api/files/singleFile/${id}`,
+        `${process.env.REACT_APP_API_URL}/files/singleFile/${id}`,
         formData,
         {
           headers: {
