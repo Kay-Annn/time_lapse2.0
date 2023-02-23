@@ -65,7 +65,7 @@ export const createTimelapse = async (req, res) => {
     //Render the image, it will return a Buffer or it will give an error if anything goes wrong
     const Render = await myGif.encode()
 
-    const gifFolder = './gif'
+    const gifFolder = './gifFolder'
     if (!fs.existsSync(gifFolder)){
       fs.mkdirSync(gifFolder);
   }
