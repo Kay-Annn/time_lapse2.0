@@ -35,6 +35,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')))
 }
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
 // Basic reminder to be set at 3PM every day, once to all emails in DB
 cron.schedule('0 0 15 * * *', () => {
   remind()
