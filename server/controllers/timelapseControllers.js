@@ -65,14 +65,14 @@ export const createTimelapse = async (req, res) => {
     //Render the image, it will return a Buffer or it will give an error if anything goes wrong
     const Render = await myGif.encode()
 
-    const gifFolder = './gifFolder'
+    const gifFolder = './gif'
     if (!fss.existsSync(gifFolder)){
       fss.mkdirSync(gifFolder);
   }
 
     //Writes the gif in this folder
     const gifName = project.name.replace(/\s+/g, '');
-    await fs.writeFile(join(__dirname, `../gifFolder/${gifName}.gif`), Render)
+    await fs.writeFile(join(__dirname, `../${gifFolder}/${gifName}.gif`), Render)
 
     const timelapseFile = new Timelapse({
       name: project.name,
