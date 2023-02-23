@@ -66,8 +66,8 @@ export const createTimelapse = async (req, res) => {
     const Render = await myGif.encode()
 
     const gifFolder = './gifFolder'
-    if (!fs.existsSync(gifFolder)){
-      fs.mkdirSync(gifFolder);
+    if (!fss.existsSync(gifFolder)){
+      fss.mkdirSync(gifFolder);
   }
 
     //Writes the gif in this folder
